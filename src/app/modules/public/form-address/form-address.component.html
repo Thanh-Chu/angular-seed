@@ -1,0 +1,74 @@
+<div>
+  <div>
+    <h4>Address</h4>
+  </div>
+  <div>
+    <form [formGroup]="formAddress">
+      <div>
+        <label
+          [ngClass]="{
+            'is-error': isSubmit && formAddress.get('street').errors
+          }"
+          >Street</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          [ngClass]="{
+            'is-invalid': isSubmit && formAddress.get('street').errors
+          }"
+          formControlName="street"
+        />
+        <div
+          style="color: red"
+          *ngIf="isSubmit && formAddress.get('street').errors"
+        >
+          Street is required
+        </div>
+      </div>
+      <div>
+        <label
+          [ngClass]="{ 'is-error': isSubmit && formAddress.get('ward').errors }"
+          >Ward</label
+        >
+        <input
+          type="text"
+          [ngClass]="{
+            'is-invalid': isSubmit && formAddress.get('ward').errors
+          }"
+          formControlName="ward"
+        />
+      </div>
+      <div>
+        <label
+          [ngClass]="{
+            'is-error': isSubmit && formAddress.get('district').errors
+          }"
+          >District</label
+        >
+        <input
+          type="text"
+          [ngClass]="{
+            'is-invalid': isSubmit && formAddress.get('district').errors
+          }"
+          formControlName="district"
+        />
+      </div>
+      <div>
+        <label
+          [ngClass]="{
+            'is-error': isSubmit && formAddress.get('province').errors
+          }"
+          >Province</label
+        >
+        <input
+          type="text"
+          [ngClass]="{
+            'is-invalid': isSubmit && formAddress.get('province').errors
+          }"
+          formControlName="province"
+        />
+      </div>
+    </form>
+  </div>
+</div>

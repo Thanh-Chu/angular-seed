@@ -1,0 +1,13 @@
+.form-control {
+    border-radius: 2px solid black;
+}
+
+.is-error {
+    color: red;
+}
+
+.is-invalid {
+    color: red;
+    border: 2px solid red;
+    border-radius: 4px;
+}

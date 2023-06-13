@@ -1,0 +1,242 @@
+<div>
+  <div>
+    <h4>Form</h4>
+  </div>
+  <form [formGroup]="formStaff">
+    <fieldset>
+      <div>
+        <h5>Username</h5>
+        <div>
+          <label
+            [ngClass]="{
+              'is-error': isSubmit && formStaff.get('firstName').errors
+            }"
+            >First Name:</label
+          >
+          <input
+            type="text"
+            [ngClass]="{
+              'is-invalid': isSubmit && formStaff.get('firstName').errors
+            }"
+            placeholder="Enter First Name"
+            formControlName="firstName"
+          />
+        </div>
+        <div>
+          <label
+            [ngClass]="{
+              'is-error': isSubmit && formStaff.get('lastName').errors
+            }"
+            >Last Name:</label
+          >
+          <input
+            type="text"
+            [ngClass]="{
+              'is-invalid': isSubmit && formStaff.get('lastName').errors
+            }"
+            placeholder="Enter Last Name"
+            formControlName="lastName"
+          />
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div>
+        <h5>Gender</h5>
+      </div>
+      <div>
+        <div>
+          <label>
+            <input
+              type="radio"
+              [ngClass]="{
+                'is-invalid': isSubmit && formStaff.get('gender').errors
+              }"
+              value="Male"
+              formControlName="gender"
+            />
+            <span>Male</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" value="Female" formControlName="gender" />
+            <span>Female</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" value="Other" formControlName="gender" />
+            <span>Other</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div>
+        <h5>Family Member</h5>
+      </div>
+      <div>
+        <select formControlName="familyMember">
+          <option value="">---Select Option---</option>
+          <option *ngFor="let value of familyNumber" [value]="value">
+            {{ value }}
+          </option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <app-form-address
+        [formAddress]="$any(formStaff.get('address'))"
+        [isSubmit]="isSubmit"
+      ></app-form-address>
+    </fieldset>
+    <fieldset>
+      <div>
+        <h5>Vehicels</h5>
+      </div>
+      <div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Bike"
+              [checked]="formStaff.get('vehicles').value.includes('Bike')"
+              (change)="updateVehicles($event)"
+            />
+            <span>Bike</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Motor"
+              [checked]="formStaff.get('vehicles').value.includes('Motor')"
+              (change)="updateVehicles($event)"
+            />
+            <span>Motor</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Car"
+              [checked]="formStaff.get('vehicles').value.includes('Car')"
+              (change)="updateVehicles($event)"
+            />
+            <span>Car</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Boat"
+              [checked]="formStaff.get('vehicles').value.includes('Boat')"
+              (change)="updateVehicles($event)"
+            />
+            <span>Boat</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div>
+        <h5>Hobbies:</h5>
+      </div>
+      <div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Book"
+              [checked]="formStaff.get('hobbies').value.includes('Book')"
+              (change)="updateHobbies($event)"
+            />
+            <span>Book</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Soccer"
+              [checked]="formStaff.get('hobbies').value.includes('Soccer')"
+              (change)="updateHobbies($event)"
+            />
+            <span>Soccer</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Badminton"
+              [checked]="formStaff.get('hobbies').value.includes('Badminton')"
+              (change)="updateHobbies($event)"
+            />
+            <span>Badminton</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Jogging"
+              [checked]="formStaff.get('hobbies').value.includes('Jogging')"
+              (change)="updateHobbies($event)"
+            />
+            <span>Jogging</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              value="Cycling"
+              [checked]="formStaff.get('hobbies').value.includes('Cycling')"
+              (change)="updateHobbies($event)"
+            />
+            <span>Cycling</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div
+        *ngFor="
+          let skill of $any(formStaff.get('skills')).controls;
+          let skillIndex = index
+        "
+      >
+        <app-form-skill
+          [formSkill]="skill"
+          [isSubmit]="isSubmit"
+        ></app-form-skill>
+        <button type="button" (click)="removeSkill(skillIndex)">
+          Remove Skill
+        </button>
+      </div>
+      <button type="button" (click)="addSkill()">Add Skill</button>
+    </fieldset>
+    <fieldset>
+      <div>
+        <h5>Sub Employees</h5>
+      </div>
+      <div
+        *ngFor="
+          let employee of $any(formStaff.get('subEmployees')).controls;
+          let empIndex = index
+        "
+      >
+        <app-form-staff [formStaff]="employee"></app-form-staff>
+        <button type="button" (click)="removeChild(empIndex)">
+          Remove Child
+        </button>
+      </div>
+      <button type="button" (click)="addChild()">Add Child</button>
+    </fieldset>
+  </form>
+</div>

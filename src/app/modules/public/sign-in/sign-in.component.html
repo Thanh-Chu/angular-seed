@@ -1,0 +1,39 @@
+<form [formGroup]="signIn" (ngSubmit)="onSubmit()">
+  <div>
+    <div>
+      <h4>Sign In</h4>
+      <div>
+        <label>
+          <span>Username or Email</span>
+          <input type="text" formControlName="email" />
+          <div
+            style="color: red"
+            *ngIf="isSubmit && signIn.get('email').errors"
+          >
+            Username or Email is error
+          </div>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span>Password</span>
+          <input type="password" formControlName="password" />
+          <div
+            style="color: red"
+            *ngIf="isSubmit && signIn.get('password').errors"
+          >
+            Password is error
+          </div>
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" />
+          <span>Remember</span>
+        </label>
+      </div>
+      <button type="submit">Login</button>
+      <h5>Don't have account? <a [routerLink]="['/register']">Register</a></h5>
+    </div>
+  </div>
+</form>
