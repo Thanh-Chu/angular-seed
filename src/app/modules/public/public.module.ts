@@ -15,7 +15,6 @@ import { IndexComponent } from './index/index.component';
 import { OrderList1Component } from './order-list1/order-list1.component';
 import { OrderList2Component } from './order-list2/order-list2.component';
 import { Product1Component } from './product1/product1.component';
-import { TempConverterPipe } from '../pipes/temp-converter.pipe';
 import { Product2Component } from './product2/product2.component';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { Product2Component } from './product2/product2.component';
     OrderList1Component,
     OrderList2Component,
     Product1Component,
-    TempConverterPipe,
     Product2Component,
   ],
   imports: [
