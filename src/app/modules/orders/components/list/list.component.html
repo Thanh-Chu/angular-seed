@@ -6,10 +6,8 @@
         <img src="assets/imgs/theme/logo.svg" class="logo" alt="Nest Dashboard" />
       </a>
       <div>
-
       </div>
     </div>
-
   </aside>
   <main class="main-wrap">
     <header class="main-header navbar">
@@ -23,6 +21,11 @@
       </div>
     </header>
     <section class="content-main">
+      <section>
+        <button type="button" (click)="updateStream()">
+          Trigger
+        </button>
+      </section>
       <div class="content-header">
         <div>
           <h2 class="content-title card-title">Order List</h2>
@@ -69,6 +72,7 @@
                   <th scope="col" class="text-end">Action</th>
                 </tr>
               </thead>
+              <!-- <tbody *ngIf="orders$ | async as orders"> -->
               <tbody>
                 <tr *ngFor="let order of orders">
                   <td>{{order.id}}</td>
@@ -85,8 +89,8 @@
                   </td>
                   <td>{{order.date}}</td>
                   <td class="text-end">
-                    <a [routerLink]="[]" class="btn btn-md rounded font-sm">Detail</a>
-                    <div class="dropdown">
+                    <a [routerLink]="[order.id]" class="btn btn-md rounded font-sm">Detail</a>
+                    <!-- <div class="dropdown">
                       <a [routerLink]="[]" class="btn btn-light rounded btn-sm font-sm"> <i
                           class="material-icons md-more_horiz"></i> </a>
                       <div class="dropdown-menu show">
@@ -94,14 +98,14 @@
                         <a class="dropdown-item" [routerLink]="[]">Edit info</a>
                         <a class="dropdown-item text-danger" [routerLink]="[]">Delete</a>
                       </div>
-                    </div>
+                    </div> -->
                     <!-- dropdown //end -->
                   </td>
                   <!-- <td class="text-end">
-                    <a href="#" class="btn btn-md rounded font-sm">Detail</a>
-                    <div class="dropdown">
-                    </div>
-                  </td> -->
+                      <a href="#" class="btn btn-md rounded font-sm">Detail</a>
+                      <div class="dropdown">
+                      </div>
+                    </td> -->
               </tbody>
             </table>
           </div>
@@ -129,8 +133,8 @@
       <div class="row pb-30 pt-15">
         <div class="col-sm-6">
           <!-- <script>
-            document.write(new Date().getFullYear());
-          </script>2023 -->
+              document.write(new Date().getFullYear());
+            </script>2023 -->
           © Nest - HTML Ecommerce Template .
         </div>
         <div class="col-sm-6">
