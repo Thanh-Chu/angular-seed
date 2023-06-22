@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path:'',
     loadChildren: ()=> import('./modules/add-product/add-product.module').then(m=>m.AddProductModule)
+  },
+  {
+    path:'',
+    loadChildren: ()=> import('./modules/pagination/pagination.module').then(m=>m.PaginationModule)
   }
 ];
 
