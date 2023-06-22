@@ -1,0 +1,19 @@
+<div class="pagination-area">
+  <div>
+    <ul class="abc" *ngFor="let item of allItems ">
+      <li>{{item.name}}</li>
+    </ul>
+  </div>
+  <nav class="navigation">
+    <ul class="pagination justify-content-start">
+      <li class="page-item"><a class="page-link" (click)="setPage(1)">First</a></li>
+      <li class="page-item"><a class="page-link" (click)="setPage(pager.currentPage -1)">
+          << </a>
+      </li>
+      <li *ngFor="let abc of pager.pages" class="page-item"> <a class="page-link" (click)="setPage(abc)">{{abc}}</a>
+      </li>
+      <li class="page-item"><a class="page-link" (click)="setPage(pager.currentPage +1)"> >> </a></li>
+      <li class="page-item"><a class="page-link" (click)="setPage(pager.totalPages)">Last</a></li>
+    </ul>
+  </nav>
+</div>
