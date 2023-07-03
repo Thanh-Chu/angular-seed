@@ -4,6 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+
 import { Product } from 'src/app/models/product.model';
 
 @Component({
@@ -13,8 +14,8 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./product1.component.scss'],
 })
 export class Product1Component implements OnInit {
-  public abc: string = 'assets/imgs/items/2.jpg';
-  @Input() products: Product[] = [
+  public abc = 'assets/imgs/items/2.jpg';
+  @Input() public products: Product[] = [
     {
       url: 'assets/imgs/items/1.jpg',
       name: 'Seeds of Change Organic Quinoa',
@@ -51,5 +52,8 @@ export class Product1Component implements OnInit {
       date: '09.09.2009',
     },
   ];
-  ngOnInit(): void {}
+  public ngOnInit(): void {
+    console.log('?');
+    
+  }
 }

@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
-  FormControl,
   FormGroup,
   ValidationErrors,
   ValidatorFn,
@@ -34,13 +33,13 @@ const mustMatch = (
 })
 export class RegisterComponent implements OnInit {
   public register: FormGroup;
-  public isSubmit: boolean = false;
-  public repeatPassword: string = 'none';
-  public abc: boolean = false;
+  public isSubmit = false;
+  public repeatPassword = 'none';
+  public abc = false;
 
   public constructor(private _formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.register = this.createRegisterForm();
   }
 

@@ -3,10 +3,10 @@ import {
   Component,
   Input,
   OnInit,
-  Output,
 } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Skill, Staff } from 'src/app/models/staff.model';
+
+import { Skill, Staff } from '../../../models/staff.model';
 
 @Component({
   selector: 'app-form-staff',
@@ -21,9 +21,12 @@ export class FormStaffComponent implements OnInit {
 
   public constructor(private _formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {
+    console.log('onInit');
+    
+  }
 
-  public createEmployeeForm(employee: Staff): FormGroup {
+  public createEmployeeForm(_: Staff): FormGroup {
     console.log(this.isSubmit);
 
     return this._formBuilder.group({
@@ -72,7 +75,7 @@ export class FormStaffComponent implements OnInit {
     }
   }
 
-  public createSkill(skill: Skill): FormGroup {
+  public createSkill(__: Skill): FormGroup {
     return this._formBuilder.group({
       name: this._formBuilder.control('', [Validators.required]),
       exp: this._formBuilder.control('', [Validators.required]),

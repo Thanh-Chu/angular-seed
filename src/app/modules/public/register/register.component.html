@@ -13,8 +13,10 @@
           <h4 class="card-title mb-4">Create an account</h4>
           <form [formGroup]="register" (ngSubmit)="onSubmit()">
             <div class="mb-3">
-              <label class="form-label">Email</label>
-              <input type="text" class="form-control" formControlName="email" placeholder="Your Email" />
+              <label class="form-label">Email
+                <input type="text" class="form-control" formControlName="email" placeholder="Your Email" />
+              </label>
+              
               <div style="color: red" *ngIf="register.get('email').errors && isSubmit">
                 Email is required
               </div>
@@ -23,25 +25,34 @@
               </div>
             </div>
             <div class="mb-3">
-              <label class="form-label">Phone Number</label>
-              <div class="row gx-2">
+              <label class="form-label">
+                <span>Phone Number</span>
+                <div class="row gx-2">
+                  <div class="col-4">
+                    <input type="text" class="form-control" value="+84">
+                  </div>
+                  <div class="col-8">
+                    <input type="text" class="form-control" formControlName="phoneNumber">
+                  </div>
+                </div>
+              </label>
+              <!-- <div class="row gx-2">
                 <div class="col-4">
                   <input type="text" class="form-control" value="+84">
                 </div>
                 <div class="col-8">
                   <input type="text" class="form-control" formControlName="phoneNumber">
                 </div>
-              </div>
-              <label>
+              </div> -->
+              <!-- <label> -->
                 <div style="color: red" *ngIf="isSubmit && register.get('phoneNumber').errors?.['required']">
-                  Phone Number is Required
+                  <span>Phone Number is Required</span>
                 </div>
-
                 <div *ngIf="register.get('phoneNumber').errors?.['minLength']">Phone Number</div>
                 <div style="color: red" *ngIf="$any(register.get('phoneNumber')).errors?.['pattern']">
-                  Phone Number is Invalid
+                  <span>Phone Number is Invalid</span>
                 </div>
-              </label>
+              <!-- </label> -->
             </div>
             <div class="mb-3">
               <span class="form-label">Create Password</span>
