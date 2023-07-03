@@ -5,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Login } from 'src/app/models/login.model';
 
 @Component({
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.login = this.createFormLogin({} as Login);
   }
 
-  public createFormLogin(form: Login): FormGroup {
+  public createFormLogin(___: Login): FormGroup {
     return this._formBuilder.group({
       userName: this._formBuilder.control('', [Validators.required]),
       password: this._formBuilder.control('', [

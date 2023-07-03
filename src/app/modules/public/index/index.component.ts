@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { TempConverterPipe } from '../../pipes/temp-converter.pipe';
+
 
 @Component({
   selector: 'app-index',
@@ -15,5 +15,8 @@ import { TempConverterPipe } from '../../pipes/temp-converter.pipe';
 export class IndexComponent implements OnInit {
   @Input() public fValue: number;
   @Input() public cValue: number;
-  ngOnInit(): void {}
+  public ngOnInit(): void {
+    console.log('abc');
+    
+  }
 }

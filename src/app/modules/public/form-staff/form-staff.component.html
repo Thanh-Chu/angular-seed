@@ -11,9 +11,8 @@
             [ngClass]="{
               'is-error': isSubmit && formStaff.get('firstName').errors
             }"
-            >First Name:</label
-          >
-          <input
+            >First Name:
+            <input
             type="text"
             [ngClass]="{
               'is-invalid': isSubmit && formStaff.get('firstName').errors
@@ -21,15 +20,17 @@
             placeholder="Enter First Name"
             formControlName="firstName"
           />
+            </label
+          >
+          
         </div>
         <div>
           <label
             [ngClass]="{
               'is-error': isSubmit && formStaff.get('lastName').errors
             }"
-            >Last Name:</label
-          >
-          <input
+            >Last Name:
+            <input
             type="text"
             [ngClass]="{
               'is-invalid': isSubmit && formStaff.get('lastName').errors
@@ -37,6 +38,9 @@
             placeholder="Enter Last Name"
             formControlName="lastName"
           />
+            </label
+          >
+          
         </div>
       </div>
     </fieldset>

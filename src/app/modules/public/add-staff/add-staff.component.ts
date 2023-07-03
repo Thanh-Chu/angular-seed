@@ -5,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Staff } from 'src/app/models/staff.model';
 
 @Component({
@@ -15,15 +16,15 @@ import { Staff } from 'src/app/models/staff.model';
 })
 export class AddStaffComponent implements OnInit {
   public addStaff: FormGroup;
-  @Input() public isSubmit: boolean = false;
+  @Input() public isSubmit = false;
 
   public constructor(private _formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.addStaff = this.createFormStaff({} as Staff);
   }
 
-  public createFormStaff(staff: Staff): FormGroup {
+  public createFormStaff(_: Staff): FormGroup {
     return this._formBuilder.group({
       firstName: this._formBuilder.control('', [Validators.required]),
       lastName: this._formBuilder.control('', [Validators.required]),

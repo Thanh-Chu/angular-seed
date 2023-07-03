@@ -6,24 +6,28 @@
     <div>
       <label
         [ngClass]="{ 'is-error': isSubmit && formSkill.get('name').errors }"
-        >Name:</label
-      >
-      <input
+        >Name:
+        <input
         type="text"
         [ngClass]="{ 'is-invalid': isSubmit && formSkill.get('name').errors }"
         formControlName="name"
       />
+        </label
+      >
+      
       <div style="color: red" *ngIf="isSubmit">Name is error</div>
     </div>
     <div>
       <label [ngClass]="{ 'is-error': isSubmit && formSkill.get('exp').errors }"
-        >Exp</label
-      >
-      <input
+        >Exp
+        <input
         type="number"
         [ngClass]="{ 'is-invalid': isSubmit && formSkill.get('exp').errors }"
         formControlName="exp"
       />
+        </label
+      >
+      
     </div>
   </form>
 </div>

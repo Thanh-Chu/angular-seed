@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'tempConverter',
 })
 export class TempConverterPipe implements PipeTransform {
-  transform(value: number): number {
+  public transform(value: number): number {
     return value * 23300;
   }
 }

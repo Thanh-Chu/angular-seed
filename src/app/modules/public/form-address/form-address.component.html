@@ -9,16 +9,19 @@
           [ngClass]="{
             'is-error': isSubmit && formAddress.get('street').errors
           }"
-          >Street</label
-        >
+          >
+        <span>
+          Street
+        </span>  
         <input
-          type="text"
-          class="form-control"
-          [ngClass]="{
-            'is-invalid': isSubmit && formAddress.get('street').errors
-          }"
-          formControlName="street"
-        />
+        type="text"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': isSubmit && formAddress.get('street').errors
+        }"
+        formControlName="street"
+      /></label
+        >
         <div
           style="color: red"
           *ngIf="isSubmit && formAddress.get('street').errors"
@@ -29,45 +32,53 @@
       <div>
         <label
           [ngClass]="{ 'is-error': isSubmit && formAddress.get('ward').errors }"
-          >Ward</label
-        >
-        <input
+          >
+            <span>Ward</span>
+            <input
           type="text"
           [ngClass]="{
             'is-invalid': isSubmit && formAddress.get('ward').errors
           }"
           formControlName="ward"
         />
+          </label
+        >
+        
       </div>
       <div>
         <label
           [ngClass]="{
             'is-error': isSubmit && formAddress.get('district').errors
           }"
-          >District</label
-        >
-        <input
+          >
+          <span>District</span>
+          <input
           type="text"
           [ngClass]="{
             'is-invalid': isSubmit && formAddress.get('district').errors
           }"
           formControlName="district"
         />
+          </label
+        >
+        
       </div>
       <div>
         <label
           [ngClass]="{
             'is-error': isSubmit && formAddress.get('province').errors
           }"
-          >Province</label
-        >
-        <input
+          >Province
+          <input
           type="text"
           [ngClass]="{
             'is-invalid': isSubmit && formAddress.get('province').errors
           }"
           formControlName="province"
         />
+          </label
+        >
+        
       </div>
     </form>
   </div>

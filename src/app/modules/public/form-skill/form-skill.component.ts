@@ -8,6 +8,6 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./form-skill.component.scss'],
 })
 export class FormSkillComponent {
-  @Input() formSkill: FormGroup;
-  @Input() isSubmit: boolean;
+  @Input() public formSkill: FormGroup;
+  @Input() public isSubmit: boolean;
 }
