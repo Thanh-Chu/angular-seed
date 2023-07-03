@@ -74,11 +74,21 @@
               </thead>
               <!-- <tbody *ngIf="orders$ | async as orders"> -->
               <tbody>
-                <tr *ngFor="let order of orders">
+                <tr *ngFor="let order of orders; index as index; let isFirst = first; let isOdd = odd">
                   <td>{{order.id}}</td>
-                  <td>{{order.name}}</td>
+                  <td>
+                    <!-- [id]="index + 'sdfds'"  -->
+                    <div [appHightLight]="isOdd ? 'blue' : 'red' " [text]="order.name"   > 
+                      {{order.name}}
+                    </div>
+                    <!-- <app-hight-light [text]="order.name" [textColor]=" isOdd ? 'blue' : 'red' "  ></app-hight-light> -->
+                  </td>
                   <td>{{order.email}}</td>
-                  <td>{{order.total }}</td>
+                  <td>{{order.total | currency :'VND' :'symbol':'4.2-2' }} </td>
+                  <!-- <td>{{order.total | currencyFormation  }} </td> -->
+                  <!-- <td>
+                    {{order.formationTotal}}
+                  </td> -->
                   <td>
                     <span *ngIf=" (order.status === 'Pending') "
                       class="badge rounded-pill alert-warning">{{order.status}}</span>
@@ -87,7 +97,13 @@
                     <span *ngIf=" (order.status === 'Received') "
                       class="badge rounded-pill alert-success">{{order.status}}</span>
                   </td>
-                  <td>{{order.date}}</td>
+                  <!-- <td>{{order.date}}</td> -->
+                  <td>
+                    {{order.date | formatDate : 'MM.DD.YYYY'}}
+                  </td>
+                  <!-- <td>
+                    {{order.date | date: 'dd.MM.yyyy' }}
+                  </td> -->
                   <td class="text-end">
                     <a [routerLink]="[order.id]" class="btn btn-md rounded font-sm">Detail</a>
                     <!-- <div class="dropdown">

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TempConverterPipe } from 'src/app/modules/pipes/temp-converter.pipe';
+import { CurrencyFormationPipe } from './currency-formation.pipe';
+import { FormatDatePipe } from './format-date.pipe';
+import { LocalDatePipe } from './local-date.pipe';
 
 @NgModule({
-  declarations: [TempConverterPipe],
+  declarations: [CurrencyFormationPipe, FormatDatePipe, LocalDatePipe],
   imports: [CommonModule],
-  exports: [TempConverterPipe],
+  exports: [CurrencyFormationPipe, FormatDatePipe, LocalDatePipe],
 })
 export class PipeModule {}

@@ -31,6 +31,10 @@ export class ListComponent implements OnInit, OnDestroy {
     this.getProducts();
   }
   public getProducts() {
+    const x =5;
+    const isOdd= x%2 ? true : false;
+    const dynamicColor = x%2 ? 'blue' : 'red';
+    
     this._subscription = this._orderService.getOrders().subscribe((data) => {
       console.log(data);
       this.orders = data;
