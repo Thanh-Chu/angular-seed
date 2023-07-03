@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OrdersService } from '../../orders.service';
-import { Order } from 'src/app/models/order.model';
+import { Order } from '../../models/order.model';
 import { switchMap, tap, map } from 'rxjs';
 
 @Component({

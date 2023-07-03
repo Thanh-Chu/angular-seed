@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -21,11 +20,15 @@
     "useDefineForClassFields": false,
     "strictNullChecks": false,
     "strictPropertyInitialization": false,
-    
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "noImplicitAny": false,
+    "lib": ["ES2022", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@helpers": ["src/app/helpers"],
+      "@constants": ["src/app/constants"],
+      "@core": ["src/app/core"],
+      "@shared/*": ["src/app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
