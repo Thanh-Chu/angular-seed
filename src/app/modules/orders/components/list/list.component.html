@@ -98,12 +98,12 @@
                       class="badge rounded-pill alert-success">{{order.status}}</span>
                   </td>
                   <!-- <td>{{order.date}}</td> -->
-                  <td>
-                    {{order.date | formatDate : 'MM.DD.YYYY'}}
-                  </td>
                   <!-- <td>
-                    {{order.date | date: 'dd.MM.yyyy' }}
+                    {{order.date | formatDate : 'MM.DD.YYYY'}}
                   </td> -->
+                  <td>
+                    {{order.date | date: 'dd.MM.yyyy' }}
+                  </td>
                   <td class="text-end">
                     <a [routerLink]="[order.id]" class="btn btn-md rounded font-sm">Detail</a>
                     <!-- <div class="dropdown">
