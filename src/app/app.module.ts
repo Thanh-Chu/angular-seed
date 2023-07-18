@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { PublicComponent } from './modules/public/public.component';
 import { PrivateComponent } from './modules/private/private.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, PublicComponent, PrivateComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
