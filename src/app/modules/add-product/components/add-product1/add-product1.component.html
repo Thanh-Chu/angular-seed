@@ -126,7 +126,7 @@
     <header class="main-header"></header>
     <section class="content-main">
       <div>
-        <form class="row" [formGroup]="product2Form" (ngSubmit)="onSubmit()">
+        <form class="row" [formGroup]="product3Form" (ngSubmit)="onSubmit()">
           <div class="col-9">
             <div class="content-header">
               <h2>Add New Product</h2>
@@ -139,138 +139,162 @@
           </div>
           <div class="col-lg-6">
             <div class="card mb-4">
+              <div class="card-header">
+                <h4>Basic</h4>
+              </div>
               <div class="card-body">
-                <div class="row ">
-                  <div class="col-md-3">
-                    <h6>1. General info</h6>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span class="form-label">Product title</span>
+                    <input type="text" placeholder="Type here" formControlName="title" class="form-control"
+                      [ngClass]="{'is-invalid' : isSubmit && product3Form.get('title').errors }">
+                  </label>
+                </div>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span class="form-label"
+                      [ngClass]="{'is-error': isSubmit && product3Form.get('description').errors}">Full
+                      description</span>
+                    <textarea class="form-control"
+                      [ngClass]="{'is-invalid': isSubmit && product3Form.get('description').errors}" rows="4"
+                      placeholder="Type here" formControlName="description"></textarea>
+                  </label>
+                </div>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="mb-4">
+                      <label style="width: 100%;">
+                        <span class="form-label">Regular price</span>
+                        <input type="text" class="form-control" placeholder="$">
+                      </label>
+                    </div>
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-lg-4">
                     <div class="mb-4">
                       <label style="width: 100%;">
-                        <span class="form-label">Product title</span>
-                        <input type="text" placeholder="Type here" formControlName="title" class="form-control"
-                          [ngClass]="{'is-invalid' : isSubmit && product2Form.get('title').errors }">
+                        <span class="form-label">Promotional price</span>
+                        <input type="text" class="form-control" placeholder="$">
                       </label>
                     </div>
-                    <div class="mb-4">
-                      <label style="width: 100%;">
-                        <span class="form-label"
-                          [ngClass]="{'is-error': isSubmit && product2Form.get('description').errors}">Description</span>
-                        <textarea class="form-control"
-                          [ngClass]="{'is-invalid': isSubmit && product2Form.get('description').errors}" rows="4"
-                          placeholder="Type here" formControlName="description"></textarea>
-                      </label>
-                    </div>
-                    <div class="mb-4">
-                      <label style="width: 100%;">
-                        <span class="form-label"
-                          [ngClass]="{'is-error': isSubmit && product2Form.get('brand').errors }">Brand name</span>
-                        <select formControlName="brand" class="form-select">
-                          <option> Adidas </option>
-                          <option> Nike </option>
-                          <option> Puma </option>
-                        </select>
-                      </label>
-                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <label class="form-label">Currency</label>
+                    <select class="form-select">
+                      <option>USD</option>
+                      <option>EUR</option>
+                      <option>RUBL</option>
+                    </select>
                   </div>
                 </div>
-                <hr class="mb-4 mt-0">
-                <div class="row ">
-                  <div class="col-md-3">
-                    <h6>2. Pricing</h6>
-                  </div>
-                  <div class="col-md-9">
-                    <div class="mb-4">
-                      <label style="width: 100%;">
-                        <span class="form-label">Cost in USD</span>
-                        <input type="text" placeholder="$00.0" formControlName="price" class="form-control"
-                          [ngClass]="{'is-invalid' : isSubmit && product2Form.get('title').errors }">
-                      </label>
-                    </div>
-                  </div>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span class="form-label">Tax rate</span>
+                    <input type="text" class="form-control" placeholder="%">
+                  </label>
                 </div>
-                <hr class="mb-4 mt-0">
-                <div class="row ">
-                  <div class="col-md-3">
-                    <h6>3. Category</h6>
-                  </div>
-                  <div class="col-md-9">
-                    <div class="mb-4">
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Clothes" formControlName="category">
-                        <span class="form-check-span">Clothes</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Electronics" formControlName="category">
-                        <span class="form-check-span">Electronics</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Sports" formControlName="category">
-                        <span class="form-check-span">Sports</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Automobiles" formControlName="category">
-                        <span class="form-check-span">Automobiles</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Home interior" formControlName="category">
-                        <span class="form-check-span">Home interior</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Smartphones" formControlName="category">
-                        <span class="form-check-span">Smartphones</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Books" formControlName="category">
-                        <span class="form-check-span">Books</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="kids item" formControlName="category">
-                        <span class="form-check-span">Kids item</span>
-                      </label>
-                      <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                        <input class="form-check-input" type="radio" value="Others" formControlName="category">
-                        <span class="form-check-span">Others</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <hr class="mb-4 mt-0">
-                <div class="row ">
-                  <div class="col-md-3">
-                    <h6>4. Media</h6>
-                  </div>
-                  <div class="col-md-9">
-                    <div class="mb-4">
-                      <label style="width: 100%;">
-                        <span class="form-label"
-                          [ngClass]="{'is-error': isSubmit && product2Form.get('images').errors}">Images</span>
-                        <input class="form-control" type="file" formControlName="images">
-                      </label>
-                    </div>
-                  </div>
-                </div>
+                <label class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" value="">
+                  <span class="form-check-label"> Make a template </span>
+                </label>
               </div>
             </div>
-
             <div class="card mb-4">
+              <div class="card-header">
+                <h4>Shipping</h4>
+              </div>
               <div class="card-body">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>ID</th>
-                      <th>ID</th>
-                      <th>ID</th>
-                      <th>ID</th>
-                      <th>ID</th>
-                    </tr>
-                  </thead>
-                </table>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mb-4">
+                      <label style="width: 100%;">
+                        <span class="form-label"
+                          [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Width</span>
+                        <input class="form-control"
+                          [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}" type="text"
+                          placeholder="inch">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="mb-4">
+                      <label style="width: 100%;">
+                        <span class="form-label"
+                          [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Height</span>
+                        <input class="form-control"
+                          [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}" type="text"
+                          placeholder="inch">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span class="form-label"
+                      [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Weight</span>
+                    <input class="form-control" [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}"
+                      type="text" placeholder="gam">
+                  </label>
+                </div>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span class="form-label"
+                      [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Shipping fees</span>
+                    <input class="form-control" [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}"
+                      type="text" placeholder="$">
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-
+          <div class="col-lg-3">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>Media</h4>
+              </div>
+              <div class="card-body">
+                <div class="input-upload">
+                  <img src="assets/imgs/theme/upload.svg" alt="">
+                  <input class="form-control" type="file">
+                </div>
+              </div>
+            </div>
+            <!-- card end// -->
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>Organization</h4>
+              </div>
+              <div class="card-body">
+                <div class="row gx-2">
+                  <div class="col-sm-6 mb-3">
+                    <label class="form-label">Category</label>
+                    <select class="form-select">
+                      <option>Automobiles</option>
+                      <option>Home items</option>
+                      <option>Electronics</option>
+                      <option>Smartphones</option>
+                      <option>Sport items</option>
+                      <option>Baby and Tous</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 mb-3">
+                    <label class="form-label">Sub-category</label>
+                    <select class="form-select">
+                      <option>Nissan</option>
+                      <option>Honda</option>
+                      <option>Mercedes</option>
+                      <option>Chevrolet</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label for="product_name" class="form-label">Tags</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <!-- row.// -->
+              </div>
+            </div>
+            <!-- card end// -->
+          </div>
         </form>
       </div>
     </section>

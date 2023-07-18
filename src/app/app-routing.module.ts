@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'navbar',
     loadChildren: ()=>import('./modules/navbar-aside/navbar-aside.module').then(m=>m.NavbarAsideModule)
+  },
+  {
+    path:'',
+    loadChildren: ()=> import('./modules/add-product/add-product.module').then(m=>m.AddProductModule)
   }
 ];
 
