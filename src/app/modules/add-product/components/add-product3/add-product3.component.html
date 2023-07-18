@@ -1,0 +1,341 @@
+<body>
+  <aside class="navbar-aside">
+    <div class="aside-top">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/imgs/theme/logo.svg" class="logo" alt="Nest Dashboard">
+      </a>
+    </div>
+    <nav>
+      <ul class="menu-aside">
+        <li class="menu-item active">
+          <a class="menu-link" href="index.html">
+            <i class="icon material-icons md-home"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item has-submenu">
+          <a class="menu-link" href="page-products-list.html">
+            <i class="icon material-icons md-shopping_bag"></i>
+            <span class="text">Products</span>
+          </a>
+          <div class="submenu">
+            <a href="page-products-list.html">Product List</a>
+            <a href="page-products-grid.html">Product grid</a>
+            <a href="page-products-grid-2.html">Product grid 2</a>
+            <a href="page-categories.html">Categories</a>
+          </div>
+        </li>
+        <li class="menu-item has-submenu">
+          <a class="menu-link" href="page-orders-1.html">
+            <i class="icon material-icons md-shopping_cart"></i>
+            <span class="text">Orders</span>
+          </a>
+          <div class="submenu">
+            <a href="page-orders-1.html">Order list 1</a>
+            <a href="page-orders-2.html">Order list 2</a>
+            <a href="page-orders-detail.html">Order detail</a>
+          </div>
+        </li>
+        <li class="menu-item has-submenu">
+          <a class="menu-link" href="page-sellers-cards.html">
+            <i class="icon material-icons md-store"></i>
+            <span class="text">Sellers</span>
+          </a>
+          <div class="submenu">
+            <a href="page-sellers-cards.html">Sellers cards</a>
+            <a href="page-sellers-list.html">Sellers list</a>
+            <a href="page-seller-detail.html">Seller profile</a>
+          </div>
+        </li>
+        <li class="menu-item has-submenu">
+          <a class="menu-link" href="page-form-product-1.html">
+            <i class="icon material-icons md-add_box"></i>
+            <span class="text">Add product</span>
+          </a>
+          <div class="submenu">
+            <a href="page-form-product-1.html">Add product 1</a>
+            <a href="page-form-product-2.html">Add product 2</a>
+            <a href="page-form-product-3.html">Add product 3</a>
+            <a href="page-form-product-4.html">Add product 4</a>
+          </div>
+        </li>
+        <li class="menu-item has-submenu">
+          <a class="menu-link" href="page-transactions-1.html">
+            <i class="icon material-icons md-monetization_on"></i>
+            <span class="text">Transactions</span>
+          </a>
+          <div class="submenu">
+            <a href="page-transactions-1.html">Transaction 1</a>
+            <a href="page-transactions-2.html">Transaction 2</a>
+          </div>
+        </li>
+        <li class="menu-item has-submenu">
+          <a class="menu-link" href="#">
+            <i class="icon material-icons md-person"></i>
+            <span class="text">Account</span>
+          </a>
+          <div class="submenu">
+            <a href="page-account-login.html">User login</a>
+            <a href="page-account-register.html">User registration</a>
+            <a href="page-error-404.html">Error 404</a>
+          </div>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="page-reviews.html">
+            <i class="icon material-icons md-comment"></i>
+            <span class="text">Reviews</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="page-brands.html">
+            <i class="icon material-icons md-stars"></i>
+            <span class="text">Brands</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" disabled="" href="#">
+            <i class="icon material-icons md-pie_chart"></i>
+            <span class="text">Statistics</span>
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <ul class="menu-aside">
+        <li class="menu-item has-submenu">
+          <a class="menu-link" href="#">
+            <i class="icon material-icons md-settings"></i>
+            <span class="text">Settings</span>
+          </a>
+          <div class="submenu">
+            <a href="page-settings-1.html">Setting sample 1</a>
+            <a href="page-settings-2.html">Setting sample 2</a>
+          </div>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="page-blank.html">
+            <i class="icon material-icons md-local_offer"></i>
+            <span class="text"> Starter page </span>
+          </a>
+        </li>
+      </ul>
+      <br>
+      <br>
+    </nav>
+  </aside>
+  <main class="main-wrap">
+    <header class="main-header"></header>
+    <section class="content-main">
+      <div >
+        <form class="row" [formGroup]="product3Form" (ngSubmit)="onSubmit()" >
+          <div class="col-9">
+            <div class="content-header">
+              <h2>Add New Product</h2>
+              <div>
+                <button class="btn btn-light rounded font-sm mt-5 text-body hover-up" type="button">Save to draft</button>
+                <button class="btn btn-md rounded font-sm hover-up" type="submit">Publich</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="mb-4" >
+                  <label style="width: 100%;" >
+                    <span 
+                    class="form-label"
+                    >Product title</span>
+                    <input type="text" placeholder="Type here" formControlName="title" class="form-control" [ngClass]="{'is-invalid' : isSubmit && product3Form.get('title').errors }" >
+                  </label>
+                </div>
+                <div class="row gx-3">
+                  <label class="col-md-4 mb-3">
+                    <span 
+                    class="form-label"
+                    >SKU</span> 
+                    <input 
+                    class="form-control"
+                    [ngClass]="{'is-invalid': isSubmit && product3Form.get('sku').errors }"
+                    type="text" placeholder="Type here" formControlName="sku">
+                  </label>
+                  <label class="col-md-4 mb-3">
+                    <span
+                    class="form-label"
+                    [ngClass]="{'is-error': isSubmit && product3Form.get('color').errors}" >Color</span>
+                    <input
+                    class="form-control"
+                    [ngClass]="{'is-invalid': isSubmit && product3Form.get('color').errors}" 
+                    type="text" placeholder="Type here" formControlName="color">
+                  </label>
+                  <label class="col-md-4 mb-3">
+                    <span 
+                    class="form-label"
+                    [ngClass]="{'is-error': isSubmit && product3Form.get('size').errors}">Size</span>
+                    <input 
+                    class="form-control"
+                    [ngClass]="{'is-invalid': isSubmit && product3Form.get('size').errors}" 
+                    type="number" placeholder="Type here" formControlName="size">
+                  </label>
+                </div>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span 
+                    class="form-label"
+                    [ngClass]="{'is-error': isSubmit && product3Form.get('brand').errors }">Brand</span>
+                    <input 
+                    class="form-control"
+                    [ngClass]="{'is-invalid':isSubmit && product3Form.get('brand').errors}"  type="text" placeholder="Type here" formControlName="brand">
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <label style="width: 100%;">
+                  <span 
+                  class="form-label"
+                  [ngClass]="{'is-error': isSubmit && product3Form.get('description').errors}">Description</span>
+                  <textarea 
+                  class="form-control"
+                  [ngClass]="{'is-invalid': isSubmit && product3Form.get('description').errors}"  rows="4" placeholder="Type here" formControlName="description"></textarea>
+                </label>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <label style="width: 100%;">
+                  <span 
+                  class="form-label"
+                  [ngClass]="{'is-error': isSubmit && product3Form.get('images').errors}" >Images</span>
+                  <input 
+                  class="form-control"
+                  type="file" formControlName="images">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span 
+                    class="form-label"
+                    [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Price</span>
+                    <input 
+                    class="form-control"
+                    [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}" type="text" placeholder="Type here" formControlName="price">
+                  </label>
+                </div>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span 
+                    class="form-label"
+                    [ngClass]="{'is-error': isSubmit && product3Form.get('status').errors}">Status</span>
+                    <input 
+                    class="form-control"
+                    [ngClass]="{'is-invalid': isSubmit && product3Form.get('status').errors}"  type="text" placeholder="Type here" formControlName="status">
+                  </label>
+                </div>
+                <div class="mb-4">
+                  <label style="width: 100%;">
+                    <span 
+                    class="form-label"
+                    [ngClass]="{'is-error': isSubmit && product3Form.get('tags').errors}">Tags</span>
+                    <input 
+                    class="form-control"
+                    [ngClass]="{'is-invalid': isSubmit && product3Form.get('tags').errors }" type="text" placeholder="Type here" formControlName="tags">
+                  </label>
+                </div>
+                <a href="#" class="font-xs hover-up mr-15"> Tech</a>
+                <a href="#" class="font-xs hover-up mr-15"> Mobile</a>
+                <a href="#" class="font-xs hover-up mr-15"> Apple</a>
+                <hr/>
+                <div class="mb-4">
+                  <h5 class="mb-3" [ngClass]="{'is-error': isSubmit && product3Form.get('categories').errors}">Categories</h5>
+                  <div >
+                    <label class="form-check">
+                      <input 
+                      class="form-check-input"
+                      type="checkbox" value="Shirt"
+                      [checked]="product3Form.get('categories').value.includes('Shirt')"
+                      (change)="updateCategories($event)"
+                      >
+                      <span>Shirt</span>
+                    </label>
+                  </div>
+                  <div >
+                    <label class="form-check">
+                      <input
+                      class="form-check-input"
+                      type="checkbox" value="T-shirt"
+                      [checked]="product3Form.get('categories').value.includes('T-shirt')"
+                      (change)="updateCategories($event)"
+                      >
+                      <span>T-shirt</span>
+                    </label>
+                  </div>
+                  <div >
+                    <label class="form-check">
+                      <input 
+                      class="form-check-input"
+                      type="checkbox" value="Sneakers"
+                      [checked]="product3Form.get('categories').value.includes('Sneakers')"
+                      (change)="updateCategories($event)"
+                      >
+                      <span>Sneakers</span>
+                    </label>
+                  </div>
+                  <div >
+                    <label class="form-check">
+                      <input
+                      class="form-check-input"
+                      type="checkbox" value="Joggers"
+                      [checked]="product3Form.get('categories').value.includes('Joggers')"
+                      (change)="updateCategories($event)"
+                      >
+                      <span>Joggers</span>
+                    </label>
+                  </div>
+                  <div >
+                    <label class="form-check">
+                      <input 
+                      class="form-check-input"
+                      type="checkbox" value="Vests"
+                      [checked]="product3Form.get('categories').value.includes('Vests')"
+                      (change)="updateCategories($event)"
+                      >
+                      <span>Vests</span>
+                    </label>
+                  </div>
+                  <div >
+                    <label class="form-check" >
+                      <input 
+                      class="form-check-input"
+                      type="checkbox" value="Knitwear"
+                      [checked]="product3Form.get('categories').value.includes('Knitwear')"
+                      (change)="updateCategories($event)"
+                      >
+                      <span>Knitwear</span>
+                    </label>
+                  </div>
+                  <div >
+                    <label class="form-check">
+                      <input 
+                      class="form-check-input"
+                      type="checkbox" value="Shorts"
+                      [checked]="product3Form.get('categories').value.includes('Shorts')"
+                      (change)="updateCategories($event)"
+                      >
+                      <span>Shorts</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
