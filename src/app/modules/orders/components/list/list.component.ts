@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Order } from '../../models/order.model';
 import { OrdersService } from '../../orders.service';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-list',
