@@ -126,7 +126,7 @@
     <header class="main-header"></header>
     <section class="content-main">
       <div>
-        <form class="row" [formGroup]="product3Form" (ngSubmit)="onSubmit()">
+        <form class="row" [formGroup]="product1Form" (ngSubmit)="onSubmit()">
           <div class="col-9">
             <div class="content-header">
               <h2>Add New Product</h2>
@@ -147,16 +147,16 @@
                   <label style="width: 100%;">
                     <span class="form-label">Product title</span>
                     <input type="text" placeholder="Type here" formControlName="title" class="form-control"
-                      [ngClass]="{'is-invalid' : isSubmit && product3Form.get('title').errors }">
+                      [ngClass]="{'is-invalid' : isSubmit && product1Form.get('title').errors }">
                   </label>
                 </div>
                 <div class="mb-4">
                   <label style="width: 100%;">
                     <span class="form-label"
-                      [ngClass]="{'is-error': isSubmit && product3Form.get('description').errors}">Full
+                      [ngClass]="{'is-error': isSubmit && product1Form.get('description').errors}">Full
                       description</span>
                     <textarea class="form-control"
-                      [ngClass]="{'is-invalid': isSubmit && product3Form.get('description').errors}" rows="4"
+                      [ngClass]="{'is-invalid': isSubmit && product1Form.get('description').errors}" rows="4"
                       placeholder="Type here" formControlName="description"></textarea>
                   </label>
                 </div>
@@ -208,9 +208,9 @@
                     <div class="mb-4">
                       <label style="width: 100%;">
                         <span class="form-label"
-                          [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Width</span>
+                          [ngClass]="{'is-error': isSubmit && product1Form.get('price').errors}">Width</span>
                         <input class="form-control"
-                          [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}" type="text"
+                          [ngClass]="{'is-invalid': isSubmit && product1Form.get('price').errors}" type="text"
                           placeholder="inch">
                       </label>
                     </div>
@@ -219,9 +219,9 @@
                     <div class="mb-4">
                       <label style="width: 100%;">
                         <span class="form-label"
-                          [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Height</span>
+                          [ngClass]="{'is-error': isSubmit && product1Form.get('price').errors}">Height</span>
                         <input class="form-control"
-                          [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}" type="text"
+                          [ngClass]="{'is-invalid': isSubmit && product1Form.get('price').errors}" type="text"
                           placeholder="inch">
                       </label>
                     </div>
@@ -230,16 +230,16 @@
                 <div class="mb-4">
                   <label style="width: 100%;">
                     <span class="form-label"
-                      [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Weight</span>
-                    <input class="form-control" [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}"
+                      [ngClass]="{'is-error': isSubmit && product1Form.get('price').errors}">Weight</span>
+                    <input class="form-control" [ngClass]="{'is-invalid': isSubmit && product1Form.get('price').errors}"
                       type="text" placeholder="gam">
                   </label>
                 </div>
                 <div class="mb-4">
                   <label style="width: 100%;">
                     <span class="form-label"
-                      [ngClass]="{'is-error': isSubmit && product3Form.get('price').errors}">Shipping fees</span>
-                    <input class="form-control" [ngClass]="{'is-invalid': isSubmit && product3Form.get('price').errors}"
+                      [ngClass]="{'is-error': isSubmit && product1Form.get('price').errors}">Shipping fees</span>
+                    <input class="form-control" [ngClass]="{'is-invalid': isSubmit && product1Form.get('price').errors}"
                       type="text" placeholder="$">
                   </label>
                 </div>
