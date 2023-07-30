@@ -126,7 +126,7 @@
       <header class="main-header"></header>
       <section class="content-main">
         <div>
-          <form class="row" [formGroup]="formCategory" (ngSubmit)="onSubmit()" >
+          <form class="row"  >
             <div class="col-9">
               <div class="content-header">
                 <h2>Categories</h2>
@@ -140,14 +140,14 @@
                       <div class="mb-4">
                         <label style="width: 100%;">
                           <span class="form-label">Name</span>
-                          <input formControlName="name" type="text" placeholder="Type here"  class="form-control"
+                          <input  type="text" placeholder="Type here"  class="form-control"
                             >
                         </label>
                       </div>
                       <div class="mb-4">
                         <label style="width: 100%;">
                           <span class="form-label">Slug</span>
-                          <input formControlName="slug" type="text" placeholder="Type here"  class="form-control"
+                          <input  type="text" placeholder="Type here"  class="form-control"
                             >
                         </label>
                       </div>
@@ -155,16 +155,16 @@
                         <label style="width: 100%;">
                           <span class="form-label"
                             >Description</span>
-                          <textarea formControlName="description" class="form-control"
+                          <textarea  class="form-control"
                             rows="4"
-                            placeholder="Type here" formControlName="description"></textarea>
+                            placeholder="Type here" ></textarea>
                         </label>
                       </div>
                       <div class="mb-4">
                         <label style="width: 100%;">
                           <span class="form-label"
                            >Parent</span>
-                          <select formControlName="parent" class="form-select">
+                          <select  class="form-select">
                             <option> Adidas </option>
                             <option> Nike </option>
                             <option> Puma </option>
