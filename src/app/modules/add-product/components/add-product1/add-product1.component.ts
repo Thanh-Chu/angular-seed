@@ -9,14 +9,14 @@ import { Product3 } from 'src/app/models/add-product3.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddProduct1Component implements OnInit {
-  public product3Form:FormGroup;
+  public product1Form:FormGroup;
   public isSubmit = false;
 
   public constructor(private _formBuilder: FormBuilder){}
 
 
   ngOnInit(): void {
-      this.product3Form= this.createFormProduct3({} as Product3);
+      this.product1Form= this.createFormProduct3({} as Product3);
   }
   
   public createFormProduct3(_:Product3):FormGroup{
@@ -37,16 +37,16 @@ export class AddProduct1Component implements OnInit {
 
   public updateCategories(event: Event):void{
     const {checked: isChecked, value} = event.target as HTMLInputElement;
-    const currentValue = this.product3Form.get('categories').getRawValue() as string[];
+    const currentValue = this.product1Form.get('categories').getRawValue() as string[];
     if(isChecked){
-      this.product3Form.get('categories').patchValue([...currentValue,value])
+      this.product1Form.get('categories').patchValue([...currentValue,value])
     } else{
-      this.product3Form.get('categories').patchValue(currentValue.filter((item)=>item != value ))
+      this.product1Form.get('categories').patchValue(currentValue.filter((item)=>item != value ))
     }
   }
 
   public onSubmit():void{
-    console.log( this.product3Form.value);
+    console.log( this.product1Form.value);
     this.isSubmit = true;
   }
 }
