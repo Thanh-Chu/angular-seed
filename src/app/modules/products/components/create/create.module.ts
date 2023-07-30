@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreateComponent } from './create.component';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,8 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         path:'',
         component: CreateComponent
       }
-    ]),
-    ReactiveFormsModule
+    ])
   ]
 })
 export class CreateModule { }
