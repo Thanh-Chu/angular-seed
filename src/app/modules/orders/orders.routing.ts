@@ -8,9 +8,13 @@ const routes: Routes = [
   //   pathMatch: 'prefix',
   // },
   {
-    path: '',
+    path: 'list',
     loadChildren: () =>
       import('./components/list/list.module').then((m) => m.ListModule),
+  },
+  {
+    path: 'create',
+    loadChildren: ()=> import('./components/create/create.module').then(m=>m.CreateModule)
   },
   {
     path: ':abc',

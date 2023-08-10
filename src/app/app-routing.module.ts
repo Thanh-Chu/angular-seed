@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: ()=> import('./modules/products/products.module').then(m=>m.ProductsModule)
+  },
+  {
+    path: 'navbar',
+    loadChildren: ()=>import('./modules/navbar-aside/navbar-aside.module').then(m=>m.NavbarAsideModule)
   }
 ];
 

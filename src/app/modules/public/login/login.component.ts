@@ -15,6 +15,7 @@ import { Login } from 'src/app/models/login.model';
 })
 export class LoginComponent implements OnInit {
   @Input() public login: FormGroup;
+  public isSubmit: boolean = false;
 
   public constructor(private _formBuilder: FormBuilder) {}
 
@@ -36,5 +37,6 @@ export class LoginComponent implements OnInit {
 
   public onSubmit(): void {
     console.log(this.login.value);
+    this.isSubmit=true
   }
 }
