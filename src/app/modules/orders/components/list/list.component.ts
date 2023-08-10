@@ -31,9 +31,6 @@ export class ListComponent implements OnInit, OnDestroy {
     this.getProducts();
   }
   public getProducts() {
-    const x =5;
-    const isOdd= x%2 ? true : false;
-    const dynamicColor = x%2 ? 'blue' : 'red';
     
     this._subscription = this._orderService.getOrders().subscribe((data) => {
       console.log(data);
@@ -53,7 +50,5 @@ export class ListComponent implements OnInit, OnDestroy {
     // this._subscription.unsubscribe();
   }
 
-  public updateStream(): void {
-    this.source$.next(this.source$.value + 1);
-  }
+  
 }
